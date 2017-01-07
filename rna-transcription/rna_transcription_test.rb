@@ -1,10 +1,15 @@
 #!/usr/bin/env ruby
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
+require 'minitest/pride'
 require_relative 'rna_transcription'
 
 # Test data version:
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
+
+module BookKeeping
+  VERSION = 4
+end
 
 class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
@@ -13,37 +18,37 @@ class ComplementTest < Minitest::Test
   end
 
   def test_rna_complement_of_guanine_is_cytosine
-    skip
+    # skip
     assert_equal 'C', Complement.of_dna('G')
   end
 
   def test_rna_complement_of_thymine_is_adenine
-    skip
+    # skip
     assert_equal 'A', Complement.of_dna('T')
   end
 
   def test_rna_complement_of_adenine_is_uracil
-    skip
+    # skip
     assert_equal 'U', Complement.of_dna('A')
   end
 
   def test_rna_complement
-    skip
+    # skip
     assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
   end
 
   def test_dna_correctly_handles_invalid_input
-    skip
+    # skip
     assert_equal '', Complement.of_dna('U')
   end
 
   def test_dna_correctly_handles_completely_invalid_input
-    skip
+    # skip
     assert_equal '', Complement.of_dna('XXX')
   end
 
   def test_dna_correctly_handles_partially_invalid_input
-    skip
+    # skip
     assert_equal '', Complement.of_dna('ACGTXXXCTTAA')
   end
 
@@ -64,7 +69,7 @@ class ComplementTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
+    # skip
     assert_equal 4, BookKeeping::VERSION
   end
 end
