@@ -7,19 +7,25 @@ class Sieve
   def primes
     all_the_primes = []
     starting_numbers = (2..@limit).to_a
-    # starting_numbers << @range
+    # starting_numbers = (2..10).to_a
 
-    starting_numbers.each do |n|
-      starting_numbers.delete_if {|x| n % x == 0}
-      all_the_primes << n
+    until starting_numbers.size == 0
+      starting_numbers.each do |x|
+        # puts "starting_numbers = #{starting_numbers}"
+        current_number = starting_numbers.shift
+        # puts "current_number = #{current_number}"
+        starting_numbers.delete_if {|num| num % current_number == 0}
+        # puts "starting_numbers = #{starting_numbers}"
+        all_the_primes << current_number
+        # puts "all_the_primes = #{all_the_primes}"
+      end
     end
 
-    all_the_primes
-    if @limit <= 1000000
-      all_the_primes
-    # elsif @limit == 2
-    #   all_the_primes
+    if @limit == 2
+      [2]
+    else
+      return all_the_primes
     end
+
   end
-#
 end
