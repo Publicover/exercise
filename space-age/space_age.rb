@@ -40,5 +40,5 @@ class SpaceAge
   def on_neptune
     @age / (164.79132 * 31_557_600.00)
   end
-  
+
 end
