@@ -7,6 +7,11 @@ require_relative 'binary'
 
 # Test data version:
 # 82eb00d
+
+module BookKeeping
+  VERSION = 3
+end
+
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -59,27 +64,27 @@ class BinaryTest < Minitest::Test
   end
 
   def test_a_number_containing_a_non_binary_digit_is_invalid
-    skip
+    # skip
     assert_raises(ArgumentError) { Binary.to_decimal('01201') }
   end
 
   def test_a_number_with_trailing_non_binary_characters_is_invalid
-    skip
+    # skip
     assert_raises(ArgumentError) { Binary.to_decimal('10nope') }
   end
 
   def test_a_number_with_leading_non_binary_characters_is_invalid
-    skip
+    # skip
     assert_raises(ArgumentError) { Binary.to_decimal('nope10') }
   end
 
   def test_a_number_with_internal_non_binary_characters_is_invalid
-    skip
+    # skip
     assert_raises(ArgumentError) { Binary.to_decimal('10nope10') }
   end
 
   def test_a_number_and_a_word_whitespace_spearated_is_invalid
-    skip
+    # skip
     assert_raises(ArgumentError) { Binary.to_decimal('001 nope') }
   end
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -99,7 +104,7 @@ class BinaryTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
-    skip
+    # skip
     assert_equal 3, BookKeeping::VERSION
   end
 end

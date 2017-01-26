@@ -1,14 +1,11 @@
 class Binary
-  attr_reader :number
-
-  def self.valid_number?(number)
-    # /0?1?/ === number.to_i
-    number !~ /0?1?/
-  end
+  # attr_reader :number
 
   def self.to_decimal(number)
 
-    unless number !~ /\d/
+    if number =~ /[^10]/
+      raise ArgumentError
+    else
       decimal_numbers = []
       total = 0
       digits = (number.split("")).reverse
@@ -17,9 +14,7 @@ class Binary
       end
       total = decimal_numbers.inject(0){|sum,x| sum + x }
       total.to_i
-    else
-      raise ArgumentError.new
     end
-  end
 
+  end
 end
