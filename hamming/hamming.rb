@@ -1,7 +1,5 @@
 class Hamming
 
-  
-
   def self.compute(first, second)
     the_first = first.split('')
     the_second = second.split('')
@@ -18,6 +16,5 @@ class Hamming
     end
     counter
   end
-
 
 end
