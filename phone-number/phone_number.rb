@@ -16,9 +16,12 @@ class PhoneNumber
       @number = invalid_number
     elsif phone_number =~ /[a-z]/ || phone_number.length <= 10
       @number = invalid_number
+    elsif phone_number =~ /(\d{10})/
+      @number = phone_number
     else
       @number = phone_number.gsub!(/[^\d]/, "")
     end
+
     # if phone_number =~ /[a-z]/ || phone_number.length <= 10
     #   @number = invalid_number
     # elsif phone_number.length == 11 && phone_number[0] == "1"
@@ -30,6 +33,18 @@ class PhoneNumber
     # else
     #   @number = phone_number.gsub!(/[^\d]/, "")
     # end
+
+    # if phone_number =~ /(\d{10})/
+    #   @number = phone_number
+    # elsif phone_number.length == 11 && phone_number[0] == "1"
+    #   phone_number[0] = ""
+    #   @number = phone_number
+    # elsif phone_number =~ /[a-z]/ || phone_number.length <= 10
+    #   @number = invalid_number
+    # else
+    #   @number = phone_number.gsub!(/[^\d]/, "")
+    # end
+
   end
 
   # def start_with_1
