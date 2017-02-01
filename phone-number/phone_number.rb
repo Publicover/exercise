@@ -19,7 +19,7 @@ class PhoneNumber
     elsif phone_number =~ /(\d{10})/
       @number = phone_number
     else
-      @number = phone_number.gsub!(/[^\d]/, "")
+      @number = phone_number.gsub(/[^\d]/, "")
     end
 
     # if phone_number =~ /[a-z]/ || phone_number.length <= 10

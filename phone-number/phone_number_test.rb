@@ -2,7 +2,7 @@
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'phone_number'
+require_relative 'phone_number2'
 
 class PhoneNumberTest < Minitest::Test
   def test_cleans_number
