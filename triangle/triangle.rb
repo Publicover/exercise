@@ -6,7 +6,6 @@ class Triangle
     @sides = sides
   end
 
-
   def equilateral?
     if sides.include?(0)
       return false
