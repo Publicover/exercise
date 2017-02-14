@@ -1,18 +1,24 @@
 class Brackets
 
   def self.paired?(brackets)
-
+    bracket_characters = brackets.chars
     bracket_counter = 0
-    brackets.chars.each_with_index do |character, index|
+    bracket_characters.each_with_index do |character, i|
       if bracket_counter < 0
         break
       elsif character == "[" || character == "{" || character == "("
         bracket_counter += 1
-      elsif character == "]" && (character[index - 1] != "{" || character[index - 1] != "(")
+      elsif (character == "]" && bracket_characters[i - 1] != "{")
         bracket_counter -= 1
-      elsif character == "}" && (character[index - 1] != "[" || character[index - 1] != "(")
+      elsif (character == "]" && bracket_characters[i - 1] != "(")
         bracket_counter -= 1
-      elsif character == ")" && (character[index - 1] != "{" || character[index - 1] != "[")
+      elsif (character == "}" && bracket_characters[i - 1] != "[")
+        bracket_counter -= 1
+      elsif (character == "}" && bracket_characters[i - 1] != "(")
+        bracket_counter -= 1
+      elsif (character == ")" && bracket_characters[i - 1] != "{")
+        bracket_counter -= 1
+      elsif (character == ")" && bracket_characters[i - 1] != "[")
         bracket_counter -= 1
       end
     end
