@@ -44,67 +44,67 @@ class ClockTest < Minitest::Test
   end
 
   def test_minutes_roll_over_continuously
-    skip
+    # skip
     assert_equal '04:43', Clock.at(0, 1723).to_s
   end
 
   def test_hour_and_minutes_roll_over
-    skip
+    # skip
     assert_equal '03:40', Clock.at(25, 160).to_s
   end
 
   def test_hour_and_minutes_roll_over_continuously
-    skip
+    # skip
     assert_equal '11:01', Clock.at(201, 3001).to_s
   end
 
   def test_hour_and_minutes_roll_over_to_exactly_midnight
-    skip
+    # skip
     assert_equal '00:00', Clock.at(72, 8640).to_s
   end
 
   def test_negative_hour
-    skip
+    # skip
     assert_equal '23:15', Clock.at(-1, 15).to_s
   end
 
   def test_negative_hour_rolls_over
-    skip
+    # skip
     assert_equal '23:00', Clock.at(-25, 0).to_s
   end
 
   def test_negative_hour_rolls_over_continuously
-    skip
+    # skip
     assert_equal '05:00', Clock.at(-91, 0).to_s
   end
 
   def test_negative_minutes
-    skip
+    # skip
     assert_equal '00:20', Clock.at(1, -40).to_s
   end
 
   def test_negative_minutes_roll_over
-    skip
+    # skip
     assert_equal '22:20', Clock.at(1, -160).to_s
   end
 
   def test_negative_minutes_roll_over_continuously
-    skip
+    # skip
     assert_equal '16:40', Clock.at(1, -4820).to_s
   end
 
   def test_negative_hour_and_minutes_both_roll_over
-    skip
+    # skip
     assert_equal '20:20', Clock.at(-25, -160).to_s
   end
 
   def test_negative_hour_and_minutes_both_roll_over_continuously
-    skip
+    # skip
     assert_equal '22:10', Clock.at(-121, -5810).to_s
   end
 
   def test_add_minutes
-    skip
+    # skip
     assert_equal '10:03', (Clock.at(10, 0) + 3).to_s
   end
 
