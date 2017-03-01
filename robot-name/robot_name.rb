@@ -7,28 +7,16 @@ class Robot
   end
 
   def reset
-    # @name.gsub!(/\w/, "")
-    # @name = name
-    # @name = nil
-    # initialize
     set_name
-    # @name = ""
   end
 
   def set_name
-    @name = ""
+    name = ""
     2.times do
-      @name << ("A".."Z").to_a.sample
+      name << ("A".."Z").to_a.sample
     end
-    @name << rand(100..999).to_s
-    # @name << ((100..999).to_a.sample).to_s
+    name << rand(100..999).to_s
+    @name = name
   end
-
-  # def name
-  #   2.times do
-  #     @name << ("A".."Z").to_a.sample
-  #   end
-  #   @name << rand(100..999).to_s
-  # end
 
 end
