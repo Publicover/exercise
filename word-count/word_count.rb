@@ -15,9 +15,7 @@ class Phrase
       end
       phrase_counts[word] += 1
     end
-
     phrase_counts
-
   end
 
 end
