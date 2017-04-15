@@ -1,23 +1,26 @@
 class RunLengthEncoding
 
-  # def initialize(input)
-  #   @input = input
-  # end
-
-  def self.encode(input)
+  def self.encode(input, input_hash = Hash.new(0))
     input_array = input.split("")
-    input_hash = Hash.new(0)
     answer_string = ""
 
-    input_array.each do |word|
-      input_hash[word] += 1
+    input_array.each_with_index do |word, index|
+      if word == input_array[0] || word == input_array[index - 1]
+        input_hash[word] += 1
+      else
+        input_hash.each do |key, value|
+          if value > 1
+            answer_string << value.to_s
+          end
+          answer_string << key.to_s
+        end
+        input_hash = Hash.new(0)
+        input_hash[word] += 1
+      end
     end
 
-    input_hash.each do |key, value|
-      answer_string << value.to_s
-      answer_string << key.to_s
-    end
     answer_string
+
   end
 
   def self.decode(input)
@@ -34,12 +37,3 @@ class RunLengthEncoding
   end
 
 end
-
-
-# one pound chicken breast
-# three quarter cup mayo
-# three tablespoons finely minced celery
-# three tablespoons finely minced onion
-# one tablespoon brown sugar
-# one eighth teaspoon garlic powder
-# pinch of salt
