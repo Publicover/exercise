@@ -30,7 +30,7 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_decode_with_single_values
-    skip
+    # skip
     input = '12WB12W3B24WB'
     output = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'
     assert_equal output, RunLengthEncoding.decode(input)

@@ -19,6 +19,12 @@ class RunLengthEncoding
       end
     end
 
+    input_hash.each do |key, value|
+      if value > 1
+        answer_string << value.to_s
+      end
+      answer_string << key.to_s
+    end
     answer_string
 
   end
@@ -27,7 +33,7 @@ class RunLengthEncoding
     letter_array = input.split("")
     answer_string = ""
     letter_array.each_with_index do |letter, index|
-      if letter  == letter.to_i.to_s
+      if letter == letter.to_i.to_s 
         (letter.to_i).times do
           answer_string << letter_array[index + 1]
         end
