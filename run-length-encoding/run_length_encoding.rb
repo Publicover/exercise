@@ -47,10 +47,9 @@ class RunLengthEncoding
             answer_string << letter_array[index + 1]
           end
         end
-      elsif letter != letter_array[index - 1] && letter_array[index + 1].to_i != 0
-        answer_string << letter
+      # elsif letter != letter_array[index - 1] && letter_array[index + 1].to_i != 0
+      #   answer_string << letter
       end
-
     end
     answer_string
   end
