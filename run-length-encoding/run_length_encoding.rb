@@ -32,12 +32,25 @@ class RunLengthEncoding
   def self.decode(input)
     letter_array = input.split("")
     answer_string = ""
+    # to each element in the array,
     letter_array.each_with_index do |letter, index|
-      if letter == letter.to_i.to_s 
-        (letter.to_i).times do
-          answer_string << letter_array[index + 1]
+      # look to see if it's a number
+      # then check to see if the next item is a number
+      if letter == letter.to_i.to_s
+        if letter_array[index + 1] == letter_array[index + 1].to_i.to_s
+          (letter.to_i * 10).times do
+            answer_string << letter_array[index + 2]
+          end
+        else
+        # if it is, put it in the answer string
+          (letter.to_i).times do
+            answer_string << letter_array[index + 1]
+          end
         end
+      elsif letter != letter_array[index - 1] && letter_array[index + 1].to_i != 0
+        answer_string << letter
       end
+
     end
     answer_string
   end
