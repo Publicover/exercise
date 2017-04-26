@@ -1,12 +1,16 @@
 class Luhn
 
+  module BookKeeping
+    VERSION = 1
+  end
+
   def self.valid?(number)
     # .inject(0) { |sum, x| sum + x }
 
     number.gsub!(/\s/, "")
-    number.gsub!(/[^0-9]/, "0")
+    # number.gsub!(/[^0-9]/, "0")
 
-    if number.length < 2
+    if number.length < 2 || number =~ /[^0-9]/
       return false
     end
 
