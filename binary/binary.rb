@@ -12,7 +12,7 @@ class Binary
       digits.each_with_index do |value, index|
         decimal_numbers << ((2 ** index) * value.to_i)
       end
-      total = decimal_numbers.inject(0){|sum,x| sum + x }
+      total = decimal_numbers.inject(0){ |sum,x| sum + x }
       total.to_i
     end
 
