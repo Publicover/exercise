@@ -53,13 +53,13 @@ class CryptoTest < Minitest::Test
   end
 
   def test_other_plaintext_segments
-    skip
+    # skip
     crypto = Crypto.new('ZOMG! ZOMBIES!!!')
     assert_equal %w(zomg zomb ies), crypto.plaintext_segments
   end
 
   def test_ciphertext
-    skip
+    # skip
     crypto = Crypto.new('Time is an illusion. Lunchtime doubly so.')
     assert_equal 'tasneyinicdsmiohooelntuillibsuuml', crypto.ciphertext
   end
