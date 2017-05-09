@@ -20,11 +20,11 @@ class SecretHandshake
   end
 
   def initialize(number)
-    @number = number
+    @number = number.to_s(2)
   end
 
   def commands(results=[])
-    results << case_number(@number)
+    results << case_number(@number.to_i)
   end
 
 end
