@@ -15,7 +15,6 @@ class BinarySearch
     unless @elements.include?(term)
       raise RuntimeError
     else
-      # return @elements.index(@elements[term])
       @elements.index(term)
     end
   end
