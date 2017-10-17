@@ -5,8 +5,16 @@ class Series
   end
 
   def slices(number)
-    combos = @loaf.split("")
-    combos.each_slice(number).to_a
+    i = 0
+    new_combos = []
+    if number > @loaf.size
+      raise ArgumentError
+    end
+    until i == @loaf.size
+      new_combos << @loaf[i, number] unless @loaf[i, number].size < number
+      i += 1
+    end
+    new_combos
   end
 
 end
