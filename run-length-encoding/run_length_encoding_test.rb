@@ -2,6 +2,10 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require_relative 'run_length_encoding'
 
+module BookKeeping
+  VERSION = 3
+end
+
 # Common test data version: 1.0.0 503a57a
 class RunLengthEncodingTest < Minitest::Test
   def test_encode_empty_string
@@ -75,7 +79,7 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_decode_multiple_whitespace_mixed_in_string
-    skip
+    # skip
     input = '2 hs2q q2w2 '
     output = '  hsqq qww  '
     assert_equal output, RunLengthEncoding.decode(input)
@@ -89,7 +93,7 @@ class RunLengthEncodingTest < Minitest::Test
   end
 
   def test_consistency_encode_followed_by_decode_gives_original_string
-    skip
+    # skip
     input = 'zzz ZZ  zZ'
     output = 'zzz ZZ  zZ'
     assert_equal output,
@@ -114,7 +118,7 @@ class RunLengthEncodingTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
+    # skip
     assert_equal 3, BookKeeping::VERSION
   end
 end

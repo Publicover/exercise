@@ -42,6 +42,9 @@ class RunLengthEncoding
             # push to string
             decoded_data << raw_letter_data[i + 2]
           end
+          # if the element is not a digit and the previous element is a digit
+        elsif /\D/ =~ letter && /\d/ =~ raw_letter_data[i - 1]
+          next
         # if the element is a digit and neither following nor previous elements are digits
         elsif /\d/ =~ letter && /\D/ =~ raw_letter_data[i + 1] && /\D/ =~ raw_letter_data[i - 1]
           # use the single digit to push to the string that number of times
@@ -54,12 +57,14 @@ class RunLengthEncoding
         #   # push single letter to string
         #   decoded_data << letter
 
-        #if the element is not a digit and what comes after is not number
+        #if the element is not a digit and what comes after is not digit
       elsif /\D/ =~ letter && /\D/ =~ raw_letter_data[i + 1]
           # push single letter to string
           decoded_data << letter
         #if the element is not a digit and what comes before is not a digit and what comes after is a digit
         elsif /\D/ =~ letter && /\D/ =~ raw_letter_data[i - 1] && /\d/ =~ raw_letter_data[i + 1]
+          decoded_data << letter
+        elsif /\D/ =~ letter && letter == raw_letter_data[-1]
           decoded_data << letter
 
 
