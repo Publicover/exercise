@@ -24,9 +24,7 @@ class Clock
     hour = hour % 24
     minute = minute % 60
 
-    if hour < 0
-      hour = 24 - (hour % 24)
-    end
+    hour = 24 - (hour % 24) if hour < 0
 
     if hour < 10 && minute < 10
       "0#{hour}:0#{minute}"

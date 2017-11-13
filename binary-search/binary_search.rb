@@ -1,10 +1,7 @@
 class BinarySearch
-
   def initialize(elements)
     @elements = elements
-    unless @elements == @elements.sort
-      raise ArgumentError
-    end
+    raise ArgumentError unless @elements == @elements.sort
   end
 
   def list
@@ -12,16 +9,11 @@ class BinarySearch
   end
 
   def search_for(term)
-    unless @elements.include?(term)
-      raise RuntimeError
-    else
-      @elements.index(term)
-    end
+    raise RuntimeError unless @elements.include?(term)
+    @elements.index(term)
   end
 
   def middle
     @elements.index(@elements[@elements.size / 2])
   end
-
-
 end

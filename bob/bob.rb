@@ -1,10 +1,9 @@
 class Bob
-
   def self.hey(remark)
-    remark.gsub!(/\n/, "")
+    remark.delete!("\n")
     if remark == remark.upcase && remark.downcase != remark
       'Whoa, chill out!'
-    elsif remark[-1] == "?"
+    elsif remark[-1] == '?'
       'Sure.'
     elsif remark =~ /^\s*$/
       'Fine. Be that way!'
@@ -12,5 +11,4 @@ class Bob
       'Whatever.'
     end
   end
-
 end

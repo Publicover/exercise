@@ -1,5 +1,5 @@
+# phone
 class PhoneNumber
-
   attr_reader :number
 
   def initialize(number)
@@ -24,14 +24,16 @@ class PhoneNumber
 
   private
 
-    def sanitize(number)
-      if number.length < 10 || (number.length == 11 && number[0] != "1") || (number.length == 12 && number[0] == "1") || number =~ /[a-z]/
-        @number = "0000000000"
-      elsif number.length == 11 && number[0] == "1"
-        @number = number[1..10]
-      else
-        @number = number.gsub(/[^\d]/, "")
-      end
+  def sanitize(number)
+    if number.length < 10 ||
+       (number.length == 11 && number[0] != '1') ||
+       (number.length == 12 && number[0] == '1') ||
+       number =~ /[a-z]/
+      @number = '0000000000'
+    elsif number.length == 11 && number[0] == '1'
+      @number = number[1..10]
+    else
+      @number = number.gsub(/[^\d]/, '')
     end
-    
+  end
 end

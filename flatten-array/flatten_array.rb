@@ -1,18 +1,13 @@
+# exercism flatten
 class FlattenArray
-
   VERSION = 1
 
-  def self.flatten(ary, empty_ary=[])
-
+  def self.flatten(ary, empty_ary = [])
     ary.each do |element|
       if element.is_a?(Array)
         flatten(element, empty_ary)
       else
-        if element == nil
-          break
-        else
-          empty_ary << element
-        end
+        element.nil? ? break : empty_ary << element
       end
     end
     empty_ary
@@ -21,5 +16,4 @@ class FlattenArray
   module BookKeeping
     VERSION = 1
   end
-
 end

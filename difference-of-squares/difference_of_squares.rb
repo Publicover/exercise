@@ -1,5 +1,5 @@
+# exercism difference
 class Squares
-
   def initialize(number)
     @number = number
   end
@@ -10,7 +10,7 @@ class Squares
     square_array.each do |num|
       square_sum += num
     end
-    square_sum ** 2
+    square_sum**2
   end
 
   def sum_of_squares
@@ -25,5 +25,4 @@ class Squares
   def difference
     square_of_sum - sum_of_squares
   end
-
 end

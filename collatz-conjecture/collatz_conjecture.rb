@@ -1,20 +1,12 @@
+# exercism collatz
 class CollatzConjecture
-
   def self.steps(number)
-    if number < 1
-      raise ArgumentError
-    else
-      counter = 0
-      until number == 1
-        if number % 2 == 0
-          number = number / 2
-          counter += 1
-        else
-          number = number * 3 + 1
-          counter += 1
-        end
-      end
-      counter
+    raise ArgumentError if number < 1
+    counter = 0
+    until number == 1
+      number.even? ? number /= 2 : number = number * 3 + 1
+      counter += 1
     end
+    counter
   end
 end

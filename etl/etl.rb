@@ -1,10 +1,9 @@
+# exercism etl
 class ETL
-
   def self.transform(letter_hash)
-    results = Hash.new
+    results = {}
 
-    letter_hash.each {|key, value| value.each {|x| results[x.downcase] = key}}
+    letter_hash.each { |key, value| value.each { |x| results[x.downcase] = key } }
     results
   end
-
 end

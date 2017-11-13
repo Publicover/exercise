@@ -1,5 +1,5 @@
+# exercism Hamming
 class Hamming
-
   def self.compute(first, second)
     the_first = first.split('')
     the_second = second.split('')
@@ -10,11 +10,8 @@ class Hamming
     end
 
     the_first.each_with_index do |letter, i|
-      if letter != the_second[i]
-        counter += 1
-      end
+      counter += 1 if letter != the_second[i]
     end
     counter
   end
-
 end

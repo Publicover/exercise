@@ -1,5 +1,5 @@
+# exercism anagram
 class Anagram
-
   def initialize(word)
     @word = word
   end
@@ -11,9 +11,7 @@ class Anagram
     array.each do |word|
       next if word.downcase == @word.downcase
       a = word.downcase.split('').sort
-      if a == sorted_word
-        answer << word
-      end
+      answer << word if a == sorted_word
     end
     answer
   end
