@@ -1,29 +1,25 @@
+# l
 class Complement
-
-  def self.of_dna(test_string)
-    final_word = ""
-    letter_array = test_string.split("")
-
-    letter_array.each do |letter|
-      unless letter == "C" || letter == "G" || letter == "T" || letter == "A"
-        final_word << ""
-        break
+  def self.of_dna(strand)
+    letters = strand.split('')
+    complements = ''
+    letters.each do |letter|
+      if letter == 'G'
+        complements << 'C'
+      elsif letter == 'C'
+        complements << 'G'
+      elsif letter == 'T'
+        complements << 'A'
+      elsif letter == 'A'
+        complements << 'U'
+      else
+        complements << ''
       end
-      case letter
-      when "C"
-        letter = "G"
-      when "G"
-        letter = "C"
-      when "T"
-        letter = "A"
-      when "A"
-        letter = "U"
-      end
-      final_word << letter
     end
-    if final_word.size != test_string.size
-      final_word = ""
-    end
-    final_word
+    complements
   end
 end
+
+# def test_rna_complement
+#   assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
+# end

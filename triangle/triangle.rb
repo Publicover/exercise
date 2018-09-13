@@ -1,5 +1,5 @@
+# tri
 class Triangle
-
   attr_reader :sides
 
   def initialize(sides)
@@ -44,12 +44,11 @@ class Triangle
 
   private
 
-    def violates_equal?
-      if sides[0] + sides[1] <= sides[2] || sides[1] + sides[2] <= sides[0] || sides[0] + sides[2] <= sides[1]
-        true
-      else
-        false
-      end
+  def violates_equal?
+    if sides[0] + sides[1] <= sides[2] || sides[1] + sides[2] <= sides[0] || sides[0] + sides[2] <= sides[1]
+      true
+    else
+      false
     end
-
+  end
 end

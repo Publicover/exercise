@@ -1,21 +1,22 @@
+# shake
 class SecretHandshake
 
-  # ACTIONS = {"1" => "wink", "10" => "double blink",
-  #            "100" => "close your eyes", "1000" => "jump",
-  #            "10000" => "reverse"}
+  # ACTIONS = {'1' => 'wink', '10' => 'double blink',
+  #            '100' => 'close your eyes', '1000' => 'jump',
+  #            '10000' => 'reverse'}
 
   def case_number(binary)
     case binary
     when 1
-      "wink"
+      'wink'
     when 10
-      "double blink"
+      'double blink'
     when 100
-      "close your eyes"
+      'close your eyes'
     when 1_000
-      "jump"
+      'jump'
     when 10_000
-      "reverse"
+      'reverse'
     end
   end
 
@@ -23,8 +24,7 @@ class SecretHandshake
     @number = number.to_s(2)
   end
 
-  def commands(results=[])
+  def commands(results = [])
     results << case_number(@number.to_i)
   end
-
 end

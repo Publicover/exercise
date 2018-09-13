@@ -1,5 +1,5 @@
+# robot
 class Robot
-
   attr_reader :name
 
   def initialize
@@ -11,12 +11,11 @@ class Robot
   end
 
   def set_name
-    name = ""
+    name = ''
     2.times do
-      name << ("A".."Z").to_a.sample
+      name << ('A'..'Z').to_a.sample
     end
     name << rand(100..999).to_s
     @name = name
   end
-
 end
